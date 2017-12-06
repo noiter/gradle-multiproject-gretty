@@ -1,0 +1,20 @@
+apply plugin: 'war'
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'org.akhikhl.gretty:gretty:1.4.2'
+  }
+}
+
+apply plugin: 'org.akhikhl.gretty'
+
+gretty {
+    httpPort = 8080
+}
+
+dependencies {
+    compile project(':greeting-library')
+}
